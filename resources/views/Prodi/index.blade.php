@@ -10,7 +10,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Data Mahasiswa</li>
+                        <li class="breadcrumb-item active" aria-current="page">Data Prodi</li>
                     </ol>
                 </div>
                 <div class="app-content">
@@ -19,9 +19,9 @@
                             <div class="col-md-12">
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        <h3 class="card-title">Data Mahasiswa</h3>
+                                        <h3 class="card-title">Data Prodi</h3>
                                         <div class="card-tools">
-                                            <a href="mahasiswa/create" class="btn btn-primary">Tambah</a>
+                                            <a href="prodi/create" class="btn btn-primary">Tambah</a>
                                         </div>
                                     </div>
                                     <!-- /.card-header -->
@@ -30,13 +30,9 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>NIM</th>
-                                                    <th>Nama</th>
-                                                    <th>Tanggal Lahir</th>
-                                                    <th>No Telp</th>
-                                                    <th>Email</th>
-                                                    <th>Id Prodi</th>
                                                     <th>Nama Prodi</th>
+                                                    <th>Kaprodi</th>
+                                                    <th>Jurusan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -44,24 +40,20 @@
 
                                             
                                         
-                                            @foreach ($mahasiswa as $m)
+                                            @foreach ($prodi as $p)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $m->nim }}</td>
-                                                    <td>{{ $m->nama }}</td>
-                                                    <td>{{ $m->tanggal_lahir }}</td>
-                                                    <td>{{ $m->no_telp }}</td>
-                                                    <td>{{ $m->email }}</td>
-                                                    <td>{{ $m->id_prodi }}</td>
-                                                    <td>{{ $m->prodi->nama }}</td>
+                                                    <td>{{ $p->nama }}</td>
+                                                    <td>{{ $p->kaprodi }}</td>
+                                                    <td>{{ $p->jurusan }}</td>
                                                    
-                                                    <td><form action="{{ url("mahasiswa/$m->nim") }}" method="post"
+                                                    <td><form action="{{ url("prodi/$p->id") }}" method="post"
                                                         class="d-inline">
                                                         @method('delete')
                                                         @csrf
                                                             <button class="btn btn-danger"
-                                                                onclick="return confirm('Yakin mau delete?')">Hapus</button>
-                                                        <a href="{{ url("mahasiswa/$m->nim/edit") }}"
+                                                                onclick="return confirm('Yakin mau hapus?')">Hapus</button>
+                                                        <a href="{{ url("prodi/$p->id/edit") }}"
                                                             class="btn btn-warning">Edit</a>
                                                         </form>
                                                     </tr>

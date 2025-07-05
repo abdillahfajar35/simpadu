@@ -6,14 +6,14 @@
           <a href="index.html" class="brand-link">
             <!--begin::Brand Image-->
             <img
-              src="../assets/img/AdminLTELogo.png"
+              src="{{ asset('../assets/img/AdminLTELogo.png') }}"
               alt="AdminLTE Logo"
               class="brand-image opacity-75 shadow" />
             <!--end::Brand Image-->
             <!--begin::Brand Text-->
             <span class="brand-text fw-light">SIMPADU</span>
             <!--end::Brand Text-->
-          </a>
+          </a>  
           <!--end::Brand Link-->
         </div>
         <!--end::Sidebar Brand-->
@@ -28,14 +28,14 @@
               data-accordion="false">
 
               <li class="nav-item">
-                <a href="index.php" class="nav-link">
+                <a href="{{ url("mahasiswa") }}" class="nav-link">
                   <i class="bi bi-mortarboard"></i>
                   <p>Mahasiswa</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="prodi.php" class="nav-link">
+                <a href="{{ url("prodi  ") }}" class="nav-link">
                   <i class="bi bi-journals"></i>
                   <p>Program Studi</p>
                 </a>
